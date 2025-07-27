@@ -1,6 +1,15 @@
 # Archivos de configuración del entorno
 .env
 *.env
+!.env.example
+
+# Archivos y directorios de datos
+pdfs/*
+!pdfs/.gitkeep
+result/*
+!result/.gitkeep
+cache/
+uploads/
 
 # Archivos de caché de Python
 __pycache__/

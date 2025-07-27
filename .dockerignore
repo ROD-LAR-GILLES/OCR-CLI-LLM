@@ -1,0 +1,52 @@
+# Version control
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+*.env
+!.env.example
+
+# Development
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+logs/
+
+# Build
+*.egg-info/
+dist/
+build/
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+tests/
+test/
+pytest.ini
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Project specific
+pdfs/*
+!pdfs/.gitkeep
+result/*
+!result/.gitkeep
+cache/
+uploads/
