@@ -6,11 +6,12 @@
 echo "Creando directorios necesarios..."
 mkdir -p pdfs result cache uploads
 
+echo "Deteniendo y eliminando contenedores antiguos..."
+docker compose down
+docker rm -f ocr-pymupdf 2>/dev/null || true
+
 echo "Limpieza de sistema..."
 docker system prune --all --volumes --force
-
-echo "Deteniendo contenedores..."
-docker compose down
 
 echo "Reconstruyendo imágenes..."
 docker compose build
@@ -25,5 +26,5 @@ echo "Estado de los contenedores:"
 docker ps -a | grep ocr-pymupdf
 
 echo "Iniciando modo interactivo..."
-docker compose exec ocr-pymupdf python -m src.main
+docker compose exec -T ocr-pymupdf python -m src.main --mode cli
 
