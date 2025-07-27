@@ -4,10 +4,8 @@
 !.env.example
 
 # Archivos y directorios de datos
-pdfs/*
-!pdfs/.gitkeep
-result/*
-!result/.gitkeep
+pdfs/
+result/
 cache/
 uploads/
 

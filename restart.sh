@@ -2,6 +2,10 @@
 
 # Script para reiniciar los contenedores después de realizar cambios
 
+# Crear directorios necesarios
+echo "Creando directorios necesarios..."
+mkdir -p pdfs result cache uploads
+
 echo "Limpieza de sistema..."
 docker system prune --all --volumes --force
 
