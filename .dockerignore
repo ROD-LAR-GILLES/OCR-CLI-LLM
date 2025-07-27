@@ -44,9 +44,7 @@ pytest.ini
 Thumbs.db
 
 # Project specific
-pdfs/*
-!pdfs/.gitkeep
-result/*
-!result/.gitkeep
+pdfs/
+result/
 cache/
 uploads/
