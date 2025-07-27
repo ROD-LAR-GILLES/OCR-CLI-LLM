@@ -43,15 +43,14 @@ WORKDIR /app
 RUN mkdir -p data/corrections \
             pdfs \
             result \
-            logs
+            logs \
+            uploads
 
 COPY --from=builder /install /usr/local
 
-COPY app.py .
+# Copiar código fuente y configuración
 COPY src/ src/
 COPY data/ data/
-COPY pdfs/ pdfs/
-COPY result/ result/
 
 # Crear usuario no-root
 RUN groupadd -r ocruser && useradd -r -g ocruser -d /app ocruser
@@ -63,4 +62,4 @@ RUN chown -R ocruser:ocruser /app/data /app/pdfs /app/result /app/logs && \
 # Cambiar al usuario no-root
 USER ocruser
 
-CMD ["python", "app.py", "--mode", "cli"]
+CMD ["python", "-m", "src.main", "--mode", "cli"]
